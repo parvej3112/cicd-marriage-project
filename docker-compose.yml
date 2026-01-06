@@ -1,0 +1,75 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: marriage-frontend
+    ports:
+      - "7000:80"
+    networks:
+      - marriage-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: marriage-backend
+    ports:
+      - "7001:7001"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - marriage-network
+
+  db:
+    image: postgres:14-alpine
+    container_name: marriage-db
+    ports:
+      - "127.0.0.1:7002:5432"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - marriage_certificate_data:/var/lib/postgresql/data
+    networks:
+      - marriage-network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: marriage-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: theaiztsinfotech@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: aizts@1234
+    ports:
+      - "7003:80"
+    networks:
+      - marriage-network
+    restart: unless-stopped
+
+volumes:
+  marriage_certificate_data:
+    name: marriage_certificate_data
+
+networks:
+  marriage-network:
+    driver: bridge
+    name: marriage-network

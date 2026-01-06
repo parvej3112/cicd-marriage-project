@@ -1,0 +1,93 @@
+
+.p-religion{
+    margin-left: 2px;
+}
+.groom-age-mar{
+    font-size: 3.5mm;
+}
+.resident{
+    margin-top: 7mm;
+    width: 100%;
+}
+.resident {
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm; /* spacing between label and textarea */
+  margin-top: 7mm; /* keep your existing spacing */
+}
+
+.resident-label {
+  flex: 0 0 auto; /* label width based on content */
+  font-size: 4mm;
+  line-height: 1.5em;
+  margin-top: 4px; /* vertical align label with textarea */
+  white-space: nowrap; /* prevent label from wrapping */
+}
+
+.resident-textarea {
+  flex: 1 1 auto; /* textarea takes remaining width */
+  font-size: 3mm;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  height: 1cm;
+  line-height: 1.5em;
+  padding-left: 1mm;
+  font-family: 'Times New Roman', serif;
+  resize: vertical; /* user can resize vertically if needed */
+  box-sizing: border-box;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.bride{
+   margin-top: 6mm;
+}
+.bride-father{
+    margin-top: 6mm;
+}
+
+.resident2{
+    margin-top: 7mm;
+    width: 100%;
+}
+.resident2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm; /* spacing between label and textarea */
+  margin-top: 7mm; /* keep your existing spacing */
+}
+
+.resident-label2 {
+  flex: 0 0 auto; /* label width based on content */
+  font-size: 4mm;
+  line-height: 1.5em;
+  margin-top: 4px; /* vertical align label with textarea */
+  white-space: nowrap; /* prevent label from wrapping */
+}
+
+.resident-textarea2 {
+  flex: 1 1 auto; /* textarea takes remaining width */
+  font-size: 3mm;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  height: 5mm;
+  line-height: 1.5em;
+  padding-left: 1mm;
+  font-family: 'Times New Roman', serif;
+  resize: vertical; /* user can resize vertically if needed */
+  box-sizing: border-box;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  text-align: center;
+}
+.mahaer{
+    margin-top: 6mm;
+}
+.digit-mahare{
+    width: 1.2cm;
+    font-size: 3.5mm;
+   
+}
