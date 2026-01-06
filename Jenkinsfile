@@ -11,7 +11,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     credentialsId: 'git-auth',
-                    url: 'https://github.com/Sufiyan1806/CICD-marriage.git'
+                    url: 'https://github.com/parvej3112/cicd-marriage-project.git'
             }
         }
 
