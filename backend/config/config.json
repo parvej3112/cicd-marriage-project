@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "Password@1234",
     "database": "MarriageDb",
-    "host": "localhost",
+    "host": "db",
     "port": 5432,
     "dialect": "postgres"
   },
@@ -11,7 +11,7 @@
     "username": "postgres",
     "password": "Password@1234",
     "database": "MarriageDb_test",
-    "host": "localhost",
+    "host": "db",
     "port": 5432,
     "dialect": "postgres"
   },
@@ -19,7 +19,7 @@
     "username": "postgres",
     "password": "Password@1234",
     "database": "MarriageDb_prod",
-    "host": "localhost",
+    "host": "db",
     "port": 5432,
     "dialect": "postgres"
   }
